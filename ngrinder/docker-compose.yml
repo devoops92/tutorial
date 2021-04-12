@@ -1,0 +1,47 @@
+version: '3'
+services:
+  controller:
+    image: ngrinder/controller:latest
+    container_name: controller
+    ports:
+      - "80:80"
+    restart: always
+    volumes:
+      - "./config/ngrinder-controller:/opt/ngrinder-controller"
+    networks:
+      - tutorial-net
+  agent1:
+    image: ngrinder/agent:latest
+    container_name: agent1
+    environment:
+      - CONTROLLER_ADDR=controller:80
+    restart: always
+    depends_on:
+      - controller
+    networks:
+      - tutorial-net
+  agent2:
+    image: ngrinder/agent:latest
+    container_name: agent2
+    environment:
+      - CONTROLLER_ADDR=controller:80
+    restart: always
+    depends_on:
+      - controller
+    networks:
+      - tutorial-net
+  agent3:
+    image: ngrinder/agent:latest
+    container_name: agent3
+    environment:
+      - CONTROLLER_ADDR=controller:80
+    restart: always
+    depends_on:
+      - controller
+    networks:
+      - tutorial-net
+
+networks:
+  tutorial-net:
+    external:
+      name: tutorial

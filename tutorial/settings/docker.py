@@ -2,7 +2,7 @@ from tutorial.settings.base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['api']
+ALLOWED_HOSTS = ['api', 'wsgi', 'asgi']
 
 DATABASES = {
     'default': {
