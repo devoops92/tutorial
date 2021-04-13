@@ -9,4 +9,4 @@ RUN apt-get update
 RUN apt-get -y install python-dev libpq-dev gcc
 RUN pip install -r requirements.txt
 RUN python manage.py makemigrations
-CMD python manage.py migrate ; gunicorn --workers 4 tutorial.wsgi:application --bind 0.0.0.0:8000
+CMD python manage.py migrate ; gunicorn --workers 4 tutorial.wsgi:application --bind 0.0.0.0:8888

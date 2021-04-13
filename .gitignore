@@ -1,6 +1,8 @@
 
 # Created by https://www.toptal.com/developers/gitignore/api/django,virtualenv,python,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,virtualenv,python,pycharm
+### Ngrinder ###
+ngrinder/config/**
 
 ### Django ###
 *.log
